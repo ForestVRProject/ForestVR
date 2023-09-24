@@ -9,7 +9,7 @@ public class ElevatorPanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _elevator = GameObject.Find("elevator1f").GetComponent<ElevatorTrigger>();
+        _elevator = GameObject.Find("elevator_interior1").GetComponent<ElevatorTrigger>();
 
         if (_elevator == null)
         {

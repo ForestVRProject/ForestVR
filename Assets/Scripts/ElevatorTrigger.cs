@@ -7,12 +7,14 @@ public class ElevatorTrigger : MonoBehaviour
     [SerializeField] private Transform _origin, _target;
     [SerializeField] private float _speed;
     public Animation leftDoor2f;
+    public Animation rightDoor2f;
 
     private bool _goingUp = false;
 
     private void Start()
     {
         leftDoor2f = GameObject.Find("left_door2f").GetComponent<Animation>();
+        rightDoor2f = GameObject.Find("right_door2f").GetComponent<Animation>();
     }
 
     public void CallElevator()
@@ -26,6 +28,7 @@ public class ElevatorTrigger : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, _origin.position, _speed * Time.deltaTime);
             leftDoor2f.Play("OpenLeftDoor");
+            rightDoor2f.Play("OpenRightDoor");
 
         }
         else if(_goingUp == false)
