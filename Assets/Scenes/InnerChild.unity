@@ -35026,6 +35026,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1425094224}
     m_Modifications:
+    - target: {fileID: 5101811009236062373, guid: 6cae7dddb6e0fb6468f8835d7b21ada6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439398054015403882, guid: 6cae7dddb6e0fb6468f8835d7b21ada6,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439398054015403882, guid: 6cae7dddb6e0fb6468f8835d7b21ada6,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439398054015403882, guid: 6cae7dddb6e0fb6468f8835d7b21ada6,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439398054015403882, guid: 6cae7dddb6e0fb6468f8835d7b21ada6,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832830026584560737, guid: 6cae7dddb6e0fb6468f8835d7b21ada6,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832830026584560737, guid: 6cae7dddb6e0fb6468f8835d7b21ada6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 8832830026584560743, guid: 6cae7dddb6e0fb6468f8835d7b21ada6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35076,15 +35111,48 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8832830026584787009, guid: 6cae7dddb6e0fb6468f8835d7b21ada6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832830026584787009, guid: 6cae7dddb6e0fb6468f8835d7b21ada6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832830026584787011, guid: 6cae7dddb6e0fb6468f8835d7b21ada6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832830026584787013, guid: 6cae7dddb6e0fb6468f8835d7b21ada6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8832830026584787015, guid: 6cae7dddb6e0fb6468f8835d7b21ada6,
         type: 3}
       propertyPath: m_Name
       value: wall_door
       objectReference: {fileID: 0}
+    - target: {fileID: 8832830026584787015, guid: 6cae7dddb6e0fb6468f8835d7b21ada6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8832830026584787009, guid: 6cae7dddb6e0fb6468f8835d7b21ada6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1793802281}
+    - targetCorrespondingSourceObject: {fileID: 8832830026584787009, guid: 6cae7dddb6e0fb6468f8835d7b21ada6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1793802282}
   m_SourcePrefab: {fileID: 100100000, guid: 6cae7dddb6e0fb6468f8835d7b21ada6, type: 3}
 --- !u!4 &1670529430 stripped
 Transform:
@@ -36142,7 +36210,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712819954}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 919e39492806b334982b6b84c90dd927, type: 3}
   m_Name: 
@@ -36186,7 +36254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 0}
-  m_MoveSpeed: 1
+  m_MoveSpeed: 3
   m_EnableStrafe: 1
   m_EnableFly: 0
   m_UseGravity: 1
@@ -36557,7 +36625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1746101555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37371,6 +37439,78 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1790661260}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1793802274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8832830026584787009, guid: 6cae7dddb6e0fb6468f8835d7b21ada6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1670529429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1793802281
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793802274}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!59 &1793802282
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793802274}
+  m_ConnectedBody: {fileID: 0}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0.01, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -0.011207581, y: 0.2676239, z: 39.15991}
+  serializedVersion: 2
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 0
+  m_ExtendedLimits: 1
+  m_UseAcceleration: 0
+  m_Limits:
+    min: -188.42581
+    max: 5.9857273
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1001 &1797105329
 PrefabInstance:
   m_ObjectHideFlags: 0
