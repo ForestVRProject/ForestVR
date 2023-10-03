@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0031994635, g: 0.0063137845, b: 0.014395488, a: 1}
+  m_IndirectSpecularColor: {r: 0.370132, g: 0.52062273, b: 0.6134011, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2664,7 +2664,7 @@ GameObject:
   - component: {fileID: 147845324}
   m_Layer: 7
   m_Name: Right Controller
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3566,8 +3566,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2082586491}
-  - {fileID: 266887489}
-  - {fileID: 1964951850}
   m_Father: {fileID: 1746101557}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &178205185 stripped
@@ -27931,7 +27929,7 @@ GameObject:
   - component: {fileID: 1322861845}
   m_Layer: 7
   m_Name: Body Collider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33487,7 +33485,7 @@ GameObject:
   - component: {fileID: 1627219502}
   m_Layer: 7
   m_Name: Left Controller
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36043,7 +36041,7 @@ GameObject:
   - component: {fileID: 1712819964}
   m_Layer: 7
   m_Name: XR Origin (XR Rig)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42170,7 +42168,7 @@ GameObject:
   - component: {fileID: 2036510686}
   m_Layer: 7
   m_Name: Physics Rig
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44497,6 +44495,8 @@ MonoBehaviour:
   _origin: {fileID: 1257484455}
   _target: {fileID: 1941418680}
   _speed: 3
+  leftDoor: {fileID: 0}
+  rightDoor: {fileID: 0}
 --- !u!54 &3975468436953738993
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -44682,3 +44682,6 @@ SceneRoots:
   - {fileID: 1257484455}
   - {fileID: 1941418680}
   - {fileID: 1018575544}
+  - {fileID: 452289176}
+  - {fileID: 1286101665}
+  - {fileID: 1746101557}
