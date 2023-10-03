@@ -8,22 +8,22 @@ public class SwitchTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("SwtichTrigger script");
+        Debug.Log("SwtichTrigger script is attacted");
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         //test
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            _target.SendMessage("OpenDoor");
-        }
+        //if (Input.GetKeyDown(KeyCode.B))
+        //{
+        //    _target.SendMessage("OpenDoor");
+        //}
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Body")
+        if(other.tag == "Player")
         {
             _target.SendMessage("OpenDoor");
         }

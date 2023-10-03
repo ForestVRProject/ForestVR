@@ -10,20 +10,16 @@ public class Elevator : MonoBehaviour
 {
     [SerializeField] private Transform _origin, _target; // elevator waypoints
     [SerializeField] private float _speed = 3.0f;
-    private GameObject _switch;
+    [SerializeField] private GameObject _player;
     public Animation leftDoor;
     public Animation rightDoor;
 
-    private bool _goingDown = true;
+    private bool _goingDown = false;
 
 
 
     private void Start()
     { 
-    }
-    public void CallElevator()
-    {
-        _goingDown = !_goingDown;
     }
 
     // Update is called once per frame
@@ -54,17 +50,20 @@ public class Elevator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player") // test with MainCamera
-        {     
-            other.transform.parent = this.transform;
+        if(other.tag == "Player" )
+        {
+            Debug.Log("enter");
+            _goingDown = true;
+            _player.transform.parent = this.transform;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Player") // test with MainCamera
+        if(other.tag == "Player")
         {
-            other.transform.parent = null;
+            Debug.Log("exit");
+            _player.transform.parent = null;
         }
     }
 
