@@ -14,7 +14,7 @@ public class Elevator : MonoBehaviour
     public Animation leftDoor;
     public Animation rightDoor;
 
-    private bool _goingDown = false;
+    private bool _goingDown = true;
 
 
 
