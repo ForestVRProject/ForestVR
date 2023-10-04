@@ -3236,6 +3236,9 @@ MonoBehaviour:
   modulate: 0
   resultValue: 0
   cutValue: 0
+  conversation_id: jerry
+  message: jerry is testing post
+  aud: {fileID: 8300000, guid: 8288233b37e467942b36677d3fdeba4e, type: 3}
 --- !u!82 &154930768
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12491,6 +12494,9 @@ MonoBehaviour:
   modulate: 0
   resultValue: 0
   cutValue: 0
+  conversation_id: jerry
+  message: jerry is testing post
+  aud: {fileID: 0}
 --- !u!1001 &542917788
 PrefabInstance:
   m_ObjectHideFlags: 0
