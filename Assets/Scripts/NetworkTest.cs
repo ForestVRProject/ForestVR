@@ -8,16 +8,14 @@ public class NetworkTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(UnityWebRequestGet());
+        //StartCoroutine(UnityWebRequestGet());
     }
 
     IEnumerator UnityWebRequestGet()
     {
-        string jobId = "41f1cdc2ff58bb5fdc287be0db2a8df3";
-        string jobGrowId = "df3870efe8e8754011cd12fa03cd275f";
+        string apikey = "";
 
-
-        string url = $"https://api.neople.co.kr/df/skills/{jobId}?jobGrowId={jobGrowId}&apikey=2zjY0ULmomyhW6gI2Biv4HrSSLO2W5j2";
+        string url = $"https://api.neople.co.kr/df/skills/jobId?jobGrowId=jobGrowId&apikey={apikey}";
         UnityWebRequest www = UnityWebRequest.Get(url); //요청을 보냄
 
         yield return www.SendWebRequest();
@@ -34,6 +32,7 @@ public class NetworkTest : MonoBehaviour
 
     IEnumerator UnityWebRequestPOSTTEST()
     {
+        
         string url = "POST 통신을 사용할 서버 주소를 입력";
         WWWForm form = new WWWForm();
         string id = "아이디";
@@ -53,4 +52,9 @@ public class NetworkTest : MonoBehaviour
             Debug.Log("error");
         }
     }
+    
+    /*public AudioSource UserVoice()
+    {
+        return;
+    }*/
 }
