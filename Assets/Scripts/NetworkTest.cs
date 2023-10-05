@@ -96,12 +96,14 @@ public class NetworkTest : MonoBehaviour
         }
     }
     IEnumerator UnityWebRequestKoreanTextRecognitionPOST()
+    IEnumerator UnityWebRequestKoreanSpeechRecognitionPOST()
     {
         string url = "http://sd-church.duckdns.org:8000/korean-text-recognition";
         WWWForm form = new WWWForm();
         form.AddBinaryData("file", null, "Assets/2.mp3");
+        form.AddBinaryData("file", System.IO.File.ReadAllBytes("Assets/UserVoice2.mp3"), "Assets/UserVoice2.mp3");
         UnityWebRequest www = UnityWebRequest.Post(url, form);  // ���� �ּҿ� ������ �Է�
-
+        
         yield return www.SendWebRequest();  // ���� ���
 
         if (www.error == null)
@@ -111,7 +113,10 @@ public class NetworkTest : MonoBehaviour
         else
         {
             Debug.Log("error");
+            Debug.Log(www.error);
         }
     }
+
+    
 }
 
