@@ -12,13 +12,14 @@ public class NetworkTest : MonoBehaviour
     public int resultValue;
     public int cutValue;
     public string conversation_id = "1fa05011-697a-4c7d-9daa-01d9bc0a7047";
-    public string message = "jerry´Ô, Áö±Ý ¶°¿À¸£´Â ¾î¸° ½ÃÀý »óÃ³´Â [´©±¸]¿¡°Ô ¹ÞÀº »óÃ³ÀÎ°¡¿ä?";
+    public string message = "jerryï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½î¸° ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã³ï¿½ï¿½ [ï¿½ï¿½ï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã³ï¿½Î°ï¿½ï¿½ï¿½?";
     public AudioClip aud;
     public Animator anim; //hug anim test
     // Start is called before the first frame update
     void Start()
     {
         samples = new float[sampleRate];
+        aud = GetComponent<AudioSource>();
         //StartCoroutine(UnityWebRequestStartConversationPOST());
         //StartCoroutine(UnityWebRequestContinueConversationPOST(conversation_id, message));
         StartCoroutine(UnityWebRequestKoreanTextRecognitionPOST());
@@ -26,25 +27,11 @@ public class NetworkTest : MonoBehaviour
         anim = GetComponent<Animator>();//hug anim test
     }
 
-    private void Update()
+    IEnumerator UnityWebRequestKoreanTextSynthesisPOST()
     {
-        //UserVoice();
-        
-        /*hug anim test*/
-        if (Input.GetKeyDown(KeyCode.Alpha8))
-        {
-            anim.SetTrigger("Hug");
-        }
-        /*hug anim test*/
-
-    }
-
-    IEnumerator UnityWebRequestGet()
-    {
-        string apikey = "";
-
-        string url = $"https://api.neople.co.kr/df/skills/jobId?jobGrowId=jobGrowId&apikey={apikey}";
-        UnityWebRequest www = UnityWebRequest.Get(url); //¿äÃ»À» º¸³¿
+        string url = "";
+        WWWForm form = new WWWForm();
+        UnityWebRequest www = UnityWebRequest.Post(url, form); //ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
         yield return www.SendWebRequest();
 
@@ -63,18 +50,14 @@ public class NetworkTest : MonoBehaviour
         string url = "http://sd-church.duckdns.org:8000/start_conversation";
         WWWForm form = new WWWForm();
         string username = "jerry";
-        string test_data = "jerry is testing post";
-        //string pw = "ºñ¹Ð¹øÈ£";
         form.AddField("username", username);
-        form.AddField("Data", test_data);
-        //form.AddField("Password", pw);
-        UnityWebRequest www = UnityWebRequest.Post(url, form);  // º¸³¾ ÁÖ¼Ò¿Í µ¥ÀÌÅÍ ÀÔ·Â
+        UnityWebRequest www = UnityWebRequest.Post(url, form);  // ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼Ò¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
 
-        yield return www.SendWebRequest();  // ÀÀ´ä ´ë±â
+        yield return www.SendWebRequest();  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
         if (www.error == null)
         {
-            Debug.Log(www.downloadHandler.text);    // µ¥ÀÌÅÍ Ãâ·Â
+            Debug.Log(www.downloadHandler.text);    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         }
         else
         {
@@ -83,19 +66,18 @@ public class NetworkTest : MonoBehaviour
     }
     IEnumerator UnityWebRequestContinueConversationPOST(string conversation_id, string message)
     {
-        string url = "http://sd-church.duckdns.org:8000/continue_conversation/1fa05011-697a-4c7d-9daa-01d9bc0a7047?message=jerry%EB%8B%98%2C%20%EC%A7%80%EA%B8%88%20%EB%96%A0%EC%98%A4%EB%A5%B4%EB%8A%94%20%EC%96%B4%EB%A6%B0%20%EC%8B%9C%EC%A0%88%20%EC%83%81%EC%B2%98%EB%8A%94%20%5B%EB%88%84%EA%B5%AC%5D%EC%97%90%EA%B2%8C%20%EB%B0%9B%EC%9D%80%20%EC%83%81%EC%B2%98%EC%9D%B8%EA%B0%80%EC%9A%94%3F";
+        string url = "http://sd-church.duckdns.org:8000/continue_conversation}";
         WWWForm form = new WWWForm();
-        //string pw = "ºñ¹Ð¹øÈ£";
         form.AddField("conversation_id", conversation_id);
         form.AddField("message", message);
         //form.AddField("Password", pw);
-        UnityWebRequest www = UnityWebRequest.Post(url, form);  // º¸³¾ ÁÖ¼Ò¿Í µ¥ÀÌÅÍ ÀÔ·Â
+        UnityWebRequest www = UnityWebRequest.Post(url, form);  // ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼Ò¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
 
-        yield return www.SendWebRequest();  // ÀÀ´ä ´ë±â
+        yield return www.SendWebRequest();  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
         if (www.error == null)
         {
-            Debug.Log(www.downloadHandler.text);    // µ¥ÀÌÅÍ Ãâ·Â
+            Debug.Log(www.downloadHandler.text);    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         }
         else
         {
@@ -106,16 +88,14 @@ public class NetworkTest : MonoBehaviour
     {
         string url = "http://sd-church.duckdns.org:8000/korean-text-recognition";
         WWWForm form = new WWWForm();
-        //string pw = "ºñ¹Ð¹øÈ£";
-        form.AddField("file", "Assets/2.mp3");
-        //form.AddField("Password", pw);
-        UnityWebRequest www = UnityWebRequest.Post(url, form);  // º¸³¾ ÁÖ¼Ò¿Í µ¥ÀÌÅÍ ÀÔ·Â
-
-        yield return www.SendWebRequest();  // ÀÀ´ä ´ë±â
+        form.AddBinaryData("file", null, "Assets/2.mp3");
+        UnityWebRequest www = UnityWebRequest.Post(url, form);  // ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼Ò¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
+        
+        yield return www.SendWebRequest();  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
         if (www.error == null)
         {
-            Debug.Log(www.downloadHandler.text);    // µ¥ÀÌÅÍ Ãâ·Â
+            Debug.Log(www.downloadHandler.text);    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         }
         else
         {
@@ -125,8 +105,10 @@ public class NetworkTest : MonoBehaviour
 
     public void UserVoice()
     {
-        AudioClip aud = Microphone.Start(Microphone.devices[0].ToString(), true, 1, sampleRate);
-        aud.GetData(samples, 0);
+        aud.clip = Microphone.Start(Microphone.devices[0].ToString(), false, 5, sampleRate); //ï¿½ï¿½ï¿½ï¿½ 5ï¿½ï¿½
+        EncodeMP3.convert(aud.clip, Application.dataPath + $"UserVoice{voiceNum}", 128); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ clipï¿½ï¿½ mp3 ï¿½ï¿½ï¿½Ï·ï¿½ ï¿½ï¿½È¯ï¿½Ø¼ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½
+        voiceNum += 1;
+        /*aud.GetData(samples, 0);
         float sum = 0;
         for(int i = 0; i < samples.Length; i++)
         {
@@ -138,5 +120,6 @@ public class NetworkTest : MonoBehaviour
         resultValue = Mathf.RoundToInt(rmsValue);
         if (resultValue < cutValue)
             resultValue = 0;
+        */
     }
 }
