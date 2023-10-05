@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OpenRightDoor
+  m_Name: CloseLeftDoor
   serializedVersion: 7
   m_Legacy: 1
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.7593204, y: -1.2972159e-15, z: 0.9426473}
+        value: {x: -1.534, y: -1.2972159e-15, z: 0.9230334}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -29,7 +29,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 1
-        value: {x: 1.4993702, y: -1.297216e-15, z: 0.9426473}
+        value: {x: -0.75932, y: -1.2972159e-15, z: 0.9230334}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -78,16 +78,16 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.7593204
+        value: -1.534
         inSlope: 0
         outSlope: 0
-        tangentMode: 136
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 1.4993702
+        value: -0.75932
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -111,13 +111,13 @@ AnimationClip:
         value: -1.2972159e-15
         inSlope: 0
         outSlope: 0
-        tangentMode: 136
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: -1.297216e-15
+        value: -1.2972159e-15
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -138,16 +138,16 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.9426473
+        value: 0.9230334
         inSlope: 0
         outSlope: 0
-        tangentMode: 136
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 0.9426473
+        value: 0.9230334
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -165,4 +165,12 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 1
+    functionName: CloseAnimationEnd
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: ee35a05f79ea5734a9d8ce0fed43b78b,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

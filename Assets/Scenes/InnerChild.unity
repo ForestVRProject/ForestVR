@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.370132, g: 0.52062273, b: 0.6134011, a: 1}
+  m_IndirectSpecularColor: {r: 0.3710159, g: 0.52084386, b: 0.6133873, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2399,6 +2399,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 9c9e96f414efd5d41b8f230139b37661, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 9c9e96f414efd5d41b8f230139b37661, type: 2}
+  - {fileID: 7400000, guid: 4e48bf9b294d560449e15e9669e2d30a, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -42131,6 +42132,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 48c56ce02064c904ba4c843c4eddff72, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 48c56ce02064c904ba4c843c4eddff72, type: 2}
+  - {fileID: 7400000, guid: acb237dd5f034b94d9f87c4ed0183739, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -44633,8 +44635,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.2641258, y: 0, z: 1.9189043}
-  m_Center: {x: 0.018994331, y: 0.38, z: 0.02}
+  m_Size: {x: 2.2641258, y: 0.029999971, z: 1.7339344}
+  m_Center: {x: 0.018994331, y: 0.38, z: -0.07248497}
 --- !u!1001 &3975468438305422510
 PrefabInstance:
   m_ObjectHideFlags: 0

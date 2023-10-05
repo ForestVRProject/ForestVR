@@ -8,7 +8,7 @@ public class SwitchTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("SwtichTrigger script is attacted");
+        Debug.Log("SwtichTrigger script is attached");
     }
 
     // Update is called once per frame
