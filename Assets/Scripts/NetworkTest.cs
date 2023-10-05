@@ -95,12 +95,10 @@ public class NetworkTest : MonoBehaviour
             Debug.Log("error");
         }
     }
-    IEnumerator UnityWebRequestKoreanTextRecognitionPOST()
     IEnumerator UnityWebRequestKoreanSpeechRecognitionPOST()
     {
-        string url = "http://sd-church.duckdns.org:8000/korean-text-recognition";
+        string url = "http://sd-church.duckdns.org:8000/korean-speech-recognition";
         WWWForm form = new WWWForm();
-        form.AddBinaryData("file", null, "Assets/2.mp3");
         form.AddBinaryData("file", System.IO.File.ReadAllBytes("Assets/UserVoice2.mp3"), "Assets/UserVoice2.mp3");
         UnityWebRequest www = UnityWebRequest.Post(url, form);  // ���� �ּҿ� ������ �Է�
         
@@ -112,7 +110,6 @@ public class NetworkTest : MonoBehaviour
         }
         else
         {
-            Debug.Log("error");
             Debug.Log(www.error);
         }
     }
