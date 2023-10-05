@@ -3219,7 +3219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &154930767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3240,6 +3240,7 @@ MonoBehaviour:
   conversation_id: jerry
   message: jerry is testing post
   aud: {fileID: 8300000, guid: 8288233b37e467942b36677d3fdeba4e, type: 3}
+  anim: {fileID: 0}
 --- !u!82 &154930768
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12498,6 +12499,7 @@ MonoBehaviour:
   conversation_id: jerry
   message: jerry is testing post
   aud: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!1001 &542917788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20965,7 +20967,7 @@ Transform:
   m_GameObject: {fileID: 986121431}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1.694}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42257,7 +42259,7 @@ Transform:
   m_GameObject: {fileID: 2036510685}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.36, y: 41.62, z: -6.942}
+  m_LocalPosition: {x: -0.36, y: 1, z: 40.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -14,6 +14,7 @@ public class NetworkTest : MonoBehaviour
     public string conversation_id = "1fa05011-697a-4c7d-9daa-01d9bc0a7047";
     public string message = "jerry님, 지금 떠오르는 어린 시절 상처는 [누구]에게 받은 상처인가요?";
     public AudioClip aud;
+    public Animator anim; //hug anim test
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +23,20 @@ public class NetworkTest : MonoBehaviour
         //StartCoroutine(UnityWebRequestContinueConversationPOST(conversation_id, message));
         StartCoroutine(UnityWebRequestKoreanTextRecognitionPOST());
         //StartCoroutine(UnityWebRequestGet());
+        anim = GetComponent<Animator>();//hug anim test
     }
 
     private void Update()
     {
         //UserVoice();
+        
+        /*hug anim test*/
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            anim.SetTrigger("Hug");
+        }
+        /*hug anim test*/
+
     }
 
     IEnumerator UnityWebRequestGet()
