@@ -3232,14 +3232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a0a86f81b0c4b4fa1137f31330074b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  samples: []
-  rmsValue: 0
-  modulate: 0
-  resultValue: 0
-  cutValue: 0
   conversation_id: jerry
   message: jerry is testing post
-  aud: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!82 &154930768
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12490,14 +12485,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a0a86f81b0c4b4fa1137f31330074b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  samples: []
-  rmsValue: 0
-  modulate: 0
-  resultValue: 0
-  cutValue: 0
   conversation_id: jerry
   message: jerry is testing post
-  aud: {fileID: 0}
   anim: {fileID: 0}
 --- !u!1001 &542917788
 PrefabInstance:
