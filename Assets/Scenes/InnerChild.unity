@@ -2646,7 +2646,7 @@ Transform:
   m_GameObject: {fileID: 147845314}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.19, y: -0.169, z: 0.429}
+  m_LocalPosition: {x: 0.19, y: -0.169, z: 0.20200023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3032,7 +3032,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.19, y: 1.031, z: 0.42900085}
+  m_ConnectedAnchor: {x: 0.19, y: 1.0309982, z: 0.4289999}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 2
@@ -3080,14 +3080,14 @@ ConfigurableJoint:
     useAcceleration: 0
   m_YDrive:
     serializedVersion: 4
-    positionSpring: 5000
-    positionDamper: 50
+    positionSpring: 1000
+    positionDamper: 10
     maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_ZDrive:
     serializedVersion: 4
-    positionSpring: 5000
-    positionDamper: 50
+    positionSpring: 0
+    positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -3112,7 +3112,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionDistance: 0
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 1
@@ -13897,6 +13897,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1425094224}
     m_Modifications:
+    - target: {fileID: 6334104863816180475, guid: 6ae2c3f833f39ef4bb6c09e6023d95ad,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9178027782705929812, guid: 6ae2c3f833f39ef4bb6c09e6023d95ad,
         type: 3}
       propertyPath: m_Name
@@ -28052,7 +28057,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_DeviceSimulatorUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7662076761675301960, guid: ead42e0472b7547fbba6c229aeaf37d3,
+        type: 3}
     - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28456,9 +28462,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.1
-  m_Height: 1.1
+  m_Height: 1.2
   m_Direction: 1
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!4 &1322861846
 Transform:
   m_ObjectHideFlags: 0
@@ -34006,7 +34012,7 @@ Transform:
   m_GameObject: {fileID: 1627219492}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.22, y: -0.169, z: 0.429}
+  m_LocalPosition: {x: -0.22, y: -0.169, z: 0.202}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34392,7 +34398,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.22, y: 1.031, z: 0.42900085}
+  m_ConnectedAnchor: {x: -0.22000003, y: 1.0309982, z: 0.4289999}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 2
@@ -34440,14 +34446,14 @@ ConfigurableJoint:
     useAcceleration: 0
   m_YDrive:
     serializedVersion: 4
-    positionSpring: 5000
-    positionDamper: 50
+    positionSpring: 0
+    positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_ZDrive:
     serializedVersion: 4
-    positionSpring: 5000
-    positionDamper: 50
+    positionSpring: 0
+    positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -36688,13 +36694,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1.1
+  m_Height: 1.2
   m_Radius: 0.1
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &1712819959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42857,7 +42863,7 @@ Transform:
   m_GameObject: {fileID: 2036510685}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.03, y: 41.64, z: -5.15}
+  m_LocalPosition: {x: -1.03, y: 41.9, z: -5.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45178,7 +45184,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.7593204, y: 2.2149162, z: 0.058841612}
   m_Center: {x: -0.3796602, y: 1.1074581, z: -0.029420568}
@@ -45199,7 +45205,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.75932056, y: 2.2149162, z: 0.058841612}
   m_Center: {x: 0.37966058, y: 1.1074581, z: -0.029420787}
@@ -45321,8 +45327,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.055111997, y: 0.19759826, z: 0.04100736}
-  m_Center: {x: -0.000000016763806, y: 0.000000044703484, z: 0.0126736965}
+  m_Size: {x: 0.055111997, y: 0.19759826, z: 0.1}
+  m_Center: {x: -0.000000016763806, y: 0.000000044703484, z: 0.03}
 --- !u!114 &3975468436953738987
 MonoBehaviour:
   m_ObjectHideFlags: 0
