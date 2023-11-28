@@ -4983,12 +4983,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: girlwithglow
       objectReference: {fileID: 0}
-    - target: {fileID: 5866666021909216657, guid: 370abd411973d04438f4dcf02cb937a9,
+    - target: {fileID: 5866666021909216657, guid: 0a05e8a26c23de94abe419f16271eb45,
         type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 9013ea9565f757549b19510d53052cf6, type: 2}
-    - target: {fileID: 5866666021909216657, guid: 0a05e8a26c23de94abe419f16271eb45,
+    - target: {fileID: 5866666021909216657, guid: 370abd411973d04438f4dcf02cb937a9,
         type: 3}
       propertyPath: m_Controller
       value: 
@@ -37842,6 +37842,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 26c12b9691739d142875ae7b9b7a617f,
         type: 2}
+    - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
+      propertyPath: dialogueTimeMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: displaySettings.dialogueUI
       value: 
