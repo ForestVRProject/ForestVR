@@ -5,12 +5,12 @@ using UnityEngine;
 public class ElevatorGuide : MonoBehaviour
 {
 
-        /*private void OnTriggerStay(Collider other)
+        private void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Player" && Guide.instance.index < 7)
+            if (other.tag == "Player")
             {
-                Debug.Log("stay");
-                Guide.instance.GuideElevator();
+                Debug.Log("enter");
+                Guide.instance.isElevator = true;
             }
-        }*/
+        }
 }
