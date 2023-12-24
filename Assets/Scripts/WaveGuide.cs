@@ -18,7 +18,7 @@ public class WaveGuide : MonoBehaviour
     IEnumerator Meditation()
     {
         aus.Play();
-        yield return new WaitForSeconds(336);
+        yield return new WaitForSeconds(307);
         aus.Pause();
         singAus.PlayOneShot(singingball);
         yield return new WaitForSeconds(10);
