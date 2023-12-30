@@ -23,7 +23,7 @@ public class SwitchTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "GameController")
         {
             _target.SendMessage("OpenDoor");
         }
