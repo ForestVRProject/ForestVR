@@ -3214,7 +3214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guideAud: {fileID: 184914026}
-  startGuide: {fileID: 8300000, guid: b1a4b8ead44852b499b64208e6ddb6f1, type: 3}
+  startGuide: {fileID: 8300000, guid: d9902d6b9e246994b9a8d0b327e1f1d9, type: 3}
   isElevator: 0
   isFirstFloor: 0
 --- !u!4 &184914025
@@ -8105,7 +8105,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9882353, b: 0.07058824, a: 1}
   m_Intensity: 0.8
   m_Range: 10
   m_SpotAngle: 30
@@ -8657,7 +8657,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9882353, b: 0.07058824, a: 1}
   m_Intensity: 5
   m_Range: 10
   m_SpotAngle: 51.06148
@@ -15668,7 +15668,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9882353, b: 0.07058824, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 46.950077
@@ -41024,29 +41024,25 @@ SceneRoots:
   - {fileID: 24001819}
   - {fileID: 1425094224}
   - {fileID: 1419645740}
-  - {fileID: 1305761363}
-  - {fileID: 719194876}
-  - {fileID: 539571893}
   - {fileID: 3975468436953248457}
-  - {fileID: 947192329}
   - {fileID: 3975468436953248463}
-  - {fileID: 3975468438305422510}
-  - {fileID: 249557937}
+  - {fileID: 947192329}
   - {fileID: 1257484455}
   - {fileID: 1941418680}
-  - {fileID: 1746101557}
-  - {fileID: 154930769}
   - {fileID: 184914025}
-  - {fileID: 291470457}
-  - {fileID: 1307601979}
-  - {fileID: 1275235573}
-  - {fileID: 2114797558}
+  - {fileID: 3975468438305422510}
+  - {fileID: 719194876}
   - {fileID: 239555671}
+  - {fileID: 291470457}
   - {fileID: 1605336167}
+  - {fileID: 2114797558}
   - {fileID: 23739942}
+  - {fileID: 1307601979}
   - {fileID: 893706723}
   - {fileID: 1189180568}
   - {fileID: 1452960220}
+  - {fileID: 1450589869}
+  - {fileID: 183142282}
   - {fileID: 1809874327}
   - {fileID: 294532941}
   - {fileID: 1846066959}
@@ -41057,5 +41053,9 @@ SceneRoots:
   - {fileID: 316015747}
   - {fileID: 1094335971}
   - {fileID: 698081552}
-  - {fileID: 1450589869}
-  - {fileID: 183142282}
+  - {fileID: 1746101557}
+  - {fileID: 154930769}
+  - {fileID: 1305761363}
+  - {fileID: 539571893}
+  - {fileID: 249557937}
+  - {fileID: 1275235573}
