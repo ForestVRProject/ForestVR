@@ -7,8 +7,10 @@ public class Guide : MonoBehaviour
     public static Guide instance;
     public AudioSource guideAud;
     public AudioClip startGuide;
+    public AudioClip[] guide;
     public bool isElevator = false;
     public bool isFirstFloor = false;
+    public int i = 0;
 
     private void Awake()
     {
@@ -61,5 +63,12 @@ public class Guide : MonoBehaviour
         guideAud.Pause();
         yield return new WaitUntil(() => isFirstFloor == true);
         guideAud.Play();
+    }
+
+    public void GuideSwitch()
+    {
+        guideAud.clip = guide[i];
+        guideAud.Play();
+        i++;
     }
 }
