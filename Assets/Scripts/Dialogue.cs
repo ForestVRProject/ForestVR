@@ -1,25 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
     [Tooltip("ด๋ป็")]
     [SerializeField]
-    private string[] textdata;
+    private string[] girl_eng_txt;
+    [SerializeField]
+    private string[] boy_eng_txt;
     public int i = 0;
     public bool isSelected = false;
     public TextMeshProUGUI textShow;
     public GameObject btn1;
     public GameObject btn2;
     public GameObject btn3;
+    private string[] textdata;
 
-    private void Start()
+    public void TextStart()
     {
         Invoke("StartText", 3f);
     }
-
     public void StartText()
     {
         StartCoroutine(SwitchText());
@@ -37,6 +40,12 @@ public class Dialogue : MonoBehaviour
                 SelectDialogue();
                 yield return new WaitWhile(() => isSelected == false);
                 continue;
+            }
+            else if (i == 19)
+            {
+                SceneManager.LoadScene("InnerChild");
+                yield return new WaitUntil(() => SceneManager.GetSceneByName("InnerChild").isLoaded);
+                textShow = GameObject.Find("TextData").GetComponent<TextMeshProUGUI>();
             }
             i++;
             yield return new WaitForSeconds(1);
@@ -79,5 +88,17 @@ public class Dialogue : MonoBehaviour
         btn2.SetActive(false);
         btn3.SetActive(false);
         isSelected = true;
+    }
+
+    public void SetDialogue()
+    {
+        if (Guide.instance.isEnglish && Guide.instance.isGirl)
+        {
+            textdata = girl_eng_txt;
+        }
+        else if (Guide.instance.isEnglish && !Guide.instance.isGirl)
+        {
+            textdata = boy_eng_txt;
+        }
     }
 }
