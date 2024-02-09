@@ -8,6 +8,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Elevator : MonoBehaviour
 {
+    public static Elevator instance;
     [SerializeField] private Transform _origin, _target; // elevator waypoints
     [SerializeField] private float _speed = 3.0f;
     [SerializeField] private GameObject _player;
@@ -15,9 +16,20 @@ public class Elevator : MonoBehaviour
     public Animation leftDoor;
     public Animation rightDoor;
 
-    private bool _goingDown = false;
-    private bool _goingUp = false;
+    public bool _goingDown = false;
+    public bool _goingUp = false;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.Log("Duplicated Elevator, ignoring this one", gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -71,7 +83,7 @@ public class Elevator : MonoBehaviour
         {
             Debug.Log("enter elevator");
             CloseDoor();
-            _player.transform.parent = this.transform;
+            //_player.transform.parent = this.transform;
             Invoke("CloseAnimationEnd", 2);
         }
     }
@@ -80,8 +92,8 @@ public class Elevator : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Debug.Log("exit elevator");     
-            _player.transform.parent = null;
+            Debug.Log("exit elevator");
+            //_player.transform.parent = null;
             CloseDoor();
         }
     }

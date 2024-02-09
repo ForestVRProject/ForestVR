@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
@@ -13,11 +14,14 @@ public class Dialogue : MonoBehaviour
     private string[] boy_eng_txt;
     public int i = 0;
     public bool isSelected = false;
+    public bool no = false;
     public TextMeshProUGUI textShow;
     public GameObject btn1;
     public GameObject btn2;
-    public GameObject btn3;
     private string[] textdata;
+    public Image blackout;
+    float time_fade = 0f;
+    [SerializeField] float F_time;
 
     public void TextStart()
     {
@@ -33,19 +37,61 @@ public class Dialogue : MonoBehaviour
         while (true)
         {
             Guide.instance.GuideSwitch();
-            textShow.SetText(textdata[i]);
+            //textShow.SetText(textdata[i]);
             yield return new WaitWhile(()=> Guide.instance.guideAud.isPlaying == true);
-            if (i == 4)
+            if (i == 19)
+            { 
+                SelectDialogue();
+                yield return new WaitWhile(() => isSelected == false);
+                isSelected = false;
+                if (no)
+                {
+                    i = 1;
+                    Guide.instance.i = 1;
+                    no = false;
+                    continue;
+                }
+                Color alpha = blackout.color;
+                alpha.a = 0;
+                blackout.gameObject.SetActive(true);
+
+                while (alpha.a < 1f)
+                {
+                    time_fade += Time.deltaTime / F_time;
+                    alpha.a = Mathf.Lerp(0, 1, time_fade);
+                    blackout.color = alpha;
+                    yield return null;
+                }
+                SceneManager.LoadScene("InnerChild");
+                
+                yield return new WaitUntil(() => SceneManager.GetSceneByName("InnerChild").isLoaded);
+                btn1 = GameObject.Find("Btn1");
+                btn2 = GameObject.Find("Btn2");
+                btn1.GetComponent<Button>().onClick.AddListener(SelectBtn1);
+                btn2.GetComponent<Button>().onClick.AddListener(SelectBtn2);
+                btn1.SetActive(false);
+                btn2.SetActive(false);
+                //textShow = GameObject.Find("TextData").GetComponent<TextMeshProUGUI>();
+            }
+            else if(i == 33)
+            {
+                yield return new WaitUntil(() => Elevator.instance._goingDown);
+            }
+            else if(i == 35)
             {
                 SelectDialogue();
                 yield return new WaitWhile(() => isSelected == false);
-                continue;
-            }
-            else if (i == 19)
-            {
-                SceneManager.LoadScene("InnerChild");
-                yield return new WaitUntil(() => SceneManager.GetSceneByName("InnerChild").isLoaded);
-                textShow = GameObject.Find("TextData").GetComponent<TextMeshProUGUI>();
+                yield return new WaitForSeconds(1);
+                isSelected = false;
+                if (no)
+                {
+                    i = 43;
+                    Guide.instance.i = 43;
+                    no = false;
+                    yield return new WaitWhile(() => Elevator.instance._goingDown);
+                    continue;
+                }
+                VideoCtrl.instance.writeLetter = true;
             }
             i++;
             yield return new WaitForSeconds(1);
@@ -56,37 +102,20 @@ public class Dialogue : MonoBehaviour
     {
         btn1.SetActive(true);
         btn2.SetActive(true);
-        btn3.SetActive(true);
     }
 
     public void SelectBtn1()
     {
-        //특정 번호의 대사로 이동
-        i = 6;
-        Guide.instance.i = 6;
         btn1.SetActive(false);
         btn2.SetActive(false);
-        btn3.SetActive(false);
         isSelected = true;
     }
 
     public void SelectBtn2()
     {
-        i = 8;
-        Guide.instance.i = 8;
+        no = true;
         btn1.SetActive(false);
         btn2.SetActive(false);
-        btn3.SetActive(false);
-        isSelected = true;
-    }
-
-    public void SelectBtn3()
-    {
-        i = 7;
-        Guide.instance.i = 7;
-        btn1.SetActive(false);
-        btn2.SetActive(false);
-        btn3.SetActive(false);
         isSelected = true;
     }
 

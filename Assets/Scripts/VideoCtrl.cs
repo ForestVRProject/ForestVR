@@ -6,11 +6,26 @@ using UnityEngine.UI;
 
 public class VideoCtrl : MonoBehaviour
 {
+    public static VideoCtrl instance;
     public GameObject RImage;
     public VideoPlayer video;
     public VideoClip child2;
     public VideoClip adult1;
     public VideoClip adult2;
+    public bool writeLetter = false;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.Log("Duplicated VideoCtrl, ignoring this one", gameObject);
+        }
+    }
+
     private void Start()
     {
         StartCoroutine(VideoControl());
@@ -20,7 +35,7 @@ public class VideoCtrl : MonoBehaviour
     {
         while (true)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (writeLetter)
             {
                 video.Play();
             }
