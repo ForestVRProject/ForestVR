@@ -15,10 +15,10 @@ public class Dialogue : MonoBehaviour
     public int i = 0;
     public bool isSelected = false;
     public bool no = false;
-    public TextMeshProUGUI textShow;
+    //public TextMeshProUGUI textShow;
     public GameObject btn1;
     public GameObject btn2;
-    private string[] textdata;
+    //private string[] textdata;
     public Image blackout;
     float time_fade = 0f;
     [SerializeField] float F_time;
@@ -38,11 +38,11 @@ public class Dialogue : MonoBehaviour
         {
             Guide.instance.GuideSwitch();
             //textShow.SetText(textdata[i]);
-            yield return new WaitWhile(()=> Guide.instance.guideAud.isPlaying == true);
+            yield return new WaitWhile(()=> Guide.instance.guideAud.isPlaying);
             if (i == 19)
             { 
                 SelectDialogue();
-                yield return new WaitWhile(() => isSelected == false);
+                yield return new WaitUntil(() => isSelected);
                 isSelected = false;
                 if (no)
                 {
@@ -67,31 +67,13 @@ public class Dialogue : MonoBehaviour
                 yield return new WaitUntil(() => SceneManager.GetSceneByName("InnerChild").isLoaded);
                 btn1 = GameObject.Find("Btn1");
                 btn2 = GameObject.Find("Btn2");
-                btn1.GetComponent<Button>().onClick.AddListener(SelectBtn1);
-                btn2.GetComponent<Button>().onClick.AddListener(SelectBtn2);
                 btn1.SetActive(false);
                 btn2.SetActive(false);
                 //textShow = GameObject.Find("TextData").GetComponent<TextMeshProUGUI>();
-            }
-            else if(i == 33)
-            {
-                yield return new WaitUntil(() => Elevator.instance._goingDown);
-            }
-            else if(i == 35)
-            {
-                SelectDialogue();
-                yield return new WaitWhile(() => isSelected == false);
+                i++;
                 yield return new WaitForSeconds(1);
-                isSelected = false;
-                if (no)
-                {
-                    i = 43;
-                    Guide.instance.i = 43;
-                    no = false;
-                    yield return new WaitWhile(() => Elevator.instance._goingDown);
-                    continue;
-                }
-                VideoCtrl.instance.writeLetter = true;
+                StartCoroutine(SwitchText2());
+                yield break;
             }
             i++;
             yield return new WaitForSeconds(1);
@@ -121,13 +103,59 @@ public class Dialogue : MonoBehaviour
 
     public void SetDialogue()
     {
-        if (Guide.instance.isEnglish && Guide.instance.isGirl)
+        /*if (Guide.instance.isEnglish && Guide.instance.isGirl)
         {
             textdata = girl_eng_txt;
         }
         else if (Guide.instance.isEnglish && !Guide.instance.isGirl)
         {
             textdata = boy_eng_txt;
+        }*/
+    }
+
+    IEnumerator SwitchText2()
+    {
+        while (true)
+        {
+            Guide.instance.GuideSwitch();
+            yield return new WaitWhile(() => Guide.instance.guideAud.isPlaying);
+            if (i == 33)
+            {
+                yield return new WaitUntil(() => Elevator.instance._goingDown);
+            }
+            else if (i == 35)
+            {
+                SelectDialogue();
+                btn1.GetComponent<Button>().onClick.AddListener(SelectBtn1);
+                btn2.GetComponent<Button>().onClick.AddListener(SelectBtn2);
+                yield return new WaitUntil(() => isSelected);
+                isSelected = false;
+                if (no)
+                {
+                    i = 43;
+                    Guide.instance.i = 43;
+                    no = false;
+                    yield return new WaitWhile(() => Elevator.instance._goingDown);
+                    yield return new WaitForSeconds(1);
+                    continue;
+                }
+                VideoCtrl.instance.Write1();
+            }
+            else if (i == 42)
+            {
+                VideoCtrl.instance.HideVideo();
+                yield return new WaitWhile(() => Elevator.instance._goingDown);
+            }
+            else if (i == 44)
+            {
+                VideoCtrl.instance.Answer1();
+            }
+            else if (i == 49)
+            {
+                VideoCtrl.instance.HideVideo();
+            }
+            i++;
+            yield return new WaitForSeconds(1);
         }
     }
 }
