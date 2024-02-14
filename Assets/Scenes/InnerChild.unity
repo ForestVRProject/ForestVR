@@ -19476,7 +19476,7 @@ PrefabInstance:
     - target: {fileID: 9178027782706152052, guid: 6ae2c3f833f39ef4bb6c09e6023d95ad,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -23.82
+      value: -23.9
       objectReference: {fileID: 0}
     - target: {fileID: 9178027782706152052, guid: 6ae2c3f833f39ef4bb6c09e6023d95ad,
         type: 3}
@@ -29949,7 +29949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _origin: {fileID: 1257484455}
   _target: {fileID: 1941418680}
-  _speed: 0.4
+  _speed: 0.6
   _player: {fileID: 2036510685}
   leftDoor: {fileID: 2034219175}
   rightDoor: {fileID: 110283391}

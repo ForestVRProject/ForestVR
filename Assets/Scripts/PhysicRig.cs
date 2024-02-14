@@ -15,7 +15,7 @@ public class PhysicRig : MonoBehaviour
 
     public float bodyHeightMin = 0.5f;
     public float bodyHeightMax = 2;
-    
+
     void FixedUpdate()
     {
         bodyCollider.height = Mathf.Clamp(playerHead.localPosition.y, bodyHeightMin, bodyHeightMax);
