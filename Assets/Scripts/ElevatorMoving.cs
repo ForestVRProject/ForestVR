@@ -84,7 +84,10 @@ public class Elevator : MonoBehaviour
             Debug.Log("enter elevator");
             CloseDoor();
             //_player.transform.parent = this.transform;
-            Invoke("CloseAnimationEnd", 2);
+            if(!_goingDown && !_goingUp)
+            {
+                Invoke("CloseAnimationEnd", 2);
+            }
         }
     }
 
@@ -100,7 +103,7 @@ public class Elevator : MonoBehaviour
 
     private void OpenDoor()
     {
-        if(leftDoor != null && rightDoor != null)
+        if(leftDoor != null && rightDoor != null && !_goingDown && !_goingUp)
         {
             leftDoor.Play("OpenLeftDoor");
             rightDoor.Play("OpenRightDoor");
@@ -109,7 +112,7 @@ public class Elevator : MonoBehaviour
 
     private void CloseDoor()
     {
-        if (leftDoor != null && rightDoor != null)
+        if (leftDoor != null && rightDoor != null && !_goingDown && !_goingUp)
         {
             leftDoor.Play("CloseLeftDoor");
             rightDoor.Play("CloseRightDoor");

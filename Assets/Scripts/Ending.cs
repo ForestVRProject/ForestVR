@@ -9,16 +9,20 @@ public class Ending : MonoBehaviour
     float time_fade = 0f;
     [SerializeField] float F_time;
 
-    private IEnumerator FadeInFlow()
+    private void Start()
+    {
+        StartCoroutine(FadeOutFlow());
+    }
+    private IEnumerator FadeOutFlow()
     {
         Color alpha = blackout.color;
-        alpha.a = 0;
+        alpha.a = 1;
         blackout.gameObject.SetActive(true);
 
-        while (alpha.a < 1f)
+        while (alpha.a > 0)
         {
             time_fade += Time.deltaTime / F_time;
-            alpha.a = Mathf.Lerp(0, 1, time_fade);
+            alpha.a = Mathf.Lerp(1, 0, time_fade);
             blackout.color = alpha;
             yield return null;
         }
@@ -26,11 +30,4 @@ public class Ending : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Player")
-        {
-            StartCoroutine(FadeInFlow());
-        }
-    }
 }

@@ -8,11 +8,13 @@ public class VideoCtrl : MonoBehaviour
 {
     public static VideoCtrl instance;
     public GameObject RImage;
+    public Image blackout2;
     public VideoPlayer video;
     public VideoClip child1;
     public VideoClip child2;
     public VideoClip adult1;
     public VideoClip adult2;
+    public VideoClip ending;
 
     private void Awake()
     {
@@ -26,6 +28,12 @@ public class VideoCtrl : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        RImage.SetActive(false);
+        blackout2.gameObject.SetActive(false);
+    }
+
     public void Write1()
     {
         video.clip = adult1;
@@ -34,7 +42,6 @@ public class VideoCtrl : MonoBehaviour
     public void Answer1()
     {
         video.clip = child1;
-        RImage.SetActive(true);
         video.Play();
     }
     public void Write2()
@@ -46,6 +53,17 @@ public class VideoCtrl : MonoBehaviour
     {
         video.clip = child2;
         video.Play();
+    }
+
+    public void Ending()
+    {
+        video.clip = ending;
+        video.Play();
+    }
+
+    public void ShowVideo()
+    {
+        RImage.SetActive(true);
     }
 
     public void HideVideo()
