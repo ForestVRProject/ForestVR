@@ -8,6 +8,8 @@ public class Guide : MonoBehaviour
     public AudioSource guideAud;
     public AudioClip[] girl_eng;
     public AudioClip[] boy_eng;
+    public GameObject helpImg_eng;
+    public GameObject helpImg_kor;
     public bool isEnglish = true;
     public bool isGirl = true;
     public int i = 0;
@@ -35,11 +37,14 @@ public class Guide : MonoBehaviour
     public void SetEnglish()
     {
         this.isEnglish = true;
+        helpImg_kor.SetActive(false);
     }
 
     public void SetKorean()
     {
         this.isEnglish = false;
+        helpImg_eng.SetActive(false);
+        
     }
 
     public void SetGirl()
