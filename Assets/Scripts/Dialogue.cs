@@ -210,6 +210,17 @@ public class Dialogue : MonoBehaviour
                     continue;
                 }
             }
+            else if (i == 150)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Innerchild>().ChangeColor();
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Innerchild>().ChangeColor();
+                }
+            }
             else if (i == 155)
             {
                 SelectDialogue();

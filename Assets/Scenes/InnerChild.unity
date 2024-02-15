@@ -3556,6 +3556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27163949a9b878d458fa2d879f4b55b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ilight: {fileID: 1217900538}
   boy: 0
 --- !u!1001 &239911120
 PrefabInstance:
@@ -17382,6 +17383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27163949a9b878d458fa2d879f4b55b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ilight: {fileID: 1512845472}
   boy: 1
 --- !u!1001 &1353849003
 PrefabInstance:
