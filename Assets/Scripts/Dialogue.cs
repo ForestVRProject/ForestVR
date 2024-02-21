@@ -15,9 +15,27 @@ public class Dialogue : MonoBehaviour
     public int i = 0;
     public bool isSelected = false;
     public bool no = false;
+    public bool newborn = false;
+    public bool toddler = false;
+    public bool child = false;
+    public bool teenager = false;
+    public bool playground = false;
+    public bool momcook = false;
+    public bool dadhorses = false;
+    public bool hand = false;
+    public bool chair = false;
     //public TextMeshProUGUI textShow;
     public GameObject btn1;
     public GameObject btn2;
+    public GameObject newbornBtn;
+    public GameObject toddlerBtn;
+    public GameObject childBtn;
+    public GameObject teenagerBtn;
+    public GameObject playgroundBtn;
+    public GameObject momcookBtn;
+    public GameObject dadhorsesBtn;
+    public GameObject handBtn;
+    public GameObject chairBtn;
     //private string[] textdata;
     public Image blackout;
     float time_fade = 0f;
@@ -67,8 +85,26 @@ public class Dialogue : MonoBehaviour
                 yield return new WaitUntil(() => SceneManager.GetSceneByName("InnerChild").isLoaded);
                 btn1 = GameObject.Find("Btn1");
                 btn2 = GameObject.Find("Btn2");
+                newbornBtn = GameObject.Find("NewBornBtn");
+                toddlerBtn = GameObject.Find("ToddlerBtn");
+                childBtn = GameObject.Find("ChildBtn");
+                teenagerBtn = GameObject.Find("TeenBtn");
+                playgroundBtn = GameObject.Find("PlaygroundBtn");
+                momcookBtn = GameObject.Find("MomCookBtn");
+                dadhorsesBtn = GameObject.Find("DadHorseBtn");
+                handBtn = GameObject.Find("HandBtn");
+                chairBtn = GameObject.Find("ChairBtn");
                 btn1.SetActive(false);
                 btn2.SetActive(false);
+                newbornBtn.SetActive(false);
+                toddlerBtn.SetActive(false);
+                childBtn.SetActive(false);
+                teenagerBtn.SetActive(false);
+                playgroundBtn.SetActive(false);
+                momcookBtn.SetActive(false);
+                dadhorsesBtn.SetActive(false);
+                handBtn.SetActive(false);
+                chairBtn.SetActive(false);
                 //textShow = GameObject.Find("TextData").GetComponent<TextMeshProUGUI>();
                 i++;
                 yield return new WaitForSeconds(1);
@@ -86,6 +122,62 @@ public class Dialogue : MonoBehaviour
         btn2.SetActive(true);
     }
 
+    public void SelectTime()
+    {
+        newbornBtn.SetActive(true);
+        toddlerBtn.SetActive(true);
+        childBtn.SetActive(true);
+        teenagerBtn.SetActive(true);
+    }
+
+    public void SelectMemory()
+    {
+        playgroundBtn.SetActive(true);
+        momcookBtn.SetActive(true);
+        dadhorsesBtn.SetActive(true);
+        handBtn.SetActive(true);
+        chairBtn.SetActive(true);
+    }
+
+    public void NewBornBtn()
+    {
+        newbornBtn.SetActive(false);
+        toddlerBtn.SetActive(false);
+        childBtn.SetActive(false);
+        teenagerBtn.SetActive(false);
+        newborn = true;
+        isSelected = true;
+    }
+
+    public void ToddlerBtn()
+    {
+        newbornBtn.SetActive(false);
+        toddlerBtn.SetActive(false);
+        childBtn.SetActive(false);
+        teenagerBtn.SetActive(false);
+        toddler = true;
+        isSelected = true;
+    }
+
+    public void ChildBtn()
+    {
+        newbornBtn.SetActive(false);
+        toddlerBtn.SetActive(false);
+        childBtn.SetActive(false);
+        teenagerBtn.SetActive(false);
+        child = true;
+        isSelected = true;
+    }
+    public void TeenagerBtn()
+    {
+        newbornBtn.SetActive(false);
+        toddlerBtn.SetActive(false);
+        childBtn.SetActive(false);
+        teenagerBtn.SetActive(false);
+        teenager = true;
+        isSelected = true;
+    }
+
     public void SelectBtn1()
     {
         btn1.SetActive(false);
@@ -98,6 +190,57 @@ public class Dialogue : MonoBehaviour
         no = true;
         btn1.SetActive(false);
         btn2.SetActive(false);
+        isSelected = true;
+    }
+
+    public void PlaygroundBtn()
+    {
+        playgroundBtn.SetActive(false);
+        momcookBtn.SetActive(false);
+        dadhorsesBtn.SetActive(false);
+        handBtn.SetActive(false);
+        chairBtn.SetActive(false);
+        playground = true;
+        isSelected = true;
+    }
+    public void MomCookBtn()
+    {
+        playgroundBtn.SetActive(false);
+        momcookBtn.SetActive(false);
+        dadhorsesBtn.SetActive(false);
+        handBtn.SetActive(false);
+        chairBtn.SetActive(false);
+        momcook = true;
+        isSelected = true;
+    }
+    public void DadHorsesBtn()
+    {
+        playgroundBtn.SetActive(false);
+        momcookBtn.SetActive(false);
+        dadhorsesBtn.SetActive(false);
+        handBtn.SetActive(false);
+        chairBtn.SetActive(false);
+        dadhorses = true;
+        isSelected = true;
+    }
+    public void HandBtn()
+    {
+        playgroundBtn.SetActive(false);
+        momcookBtn.SetActive(false);
+        dadhorsesBtn.SetActive(false);
+        handBtn.SetActive(false);
+        chairBtn.SetActive(false);
+        hand = true;
+        isSelected = true;
+    }
+    public void ChairBtn()
+    {
+        playgroundBtn.SetActive(false);
+        momcookBtn.SetActive(false);
+        dadhorsesBtn.SetActive(false);
+        handBtn.SetActive(false);
+        chairBtn.SetActive(false);
+        chair = true;
         isSelected = true;
     }
 
@@ -180,6 +323,93 @@ public class Dialogue : MonoBehaviour
                     continue;
                 }
             }
+            else if (i == 74)
+            {
+                SelectTime();
+                newbornBtn.GetComponent<Button>().onClick.AddListener(NewBornBtn);
+                toddlerBtn.GetComponent<Button>().onClick.AddListener(ToddlerBtn);
+                childBtn.GetComponent<Button>().onClick.AddListener(ChildBtn);
+                teenagerBtn.GetComponent<Button>().onClick.AddListener(TeenagerBtn);
+                yield return new WaitUntil(() => isSelected);
+                isSelected = false;
+                if (newborn)
+                {
+                    i++;
+                    Guide.instance.i++;
+                    continue;
+                }
+                else if (toddler)
+                {
+                    i = 80;
+                    Guide.instance.i = 80;
+                    continue;
+                }
+                else if (child)
+                {
+                    i = 87;
+                    Guide.instance.i = 87;
+                    continue;
+                }
+                else if (teenager)
+                {
+                    i = 96;
+                    Guide.instance.i = 96;
+                    continue;
+                }
+            }
+            else if (i == 79 || i == 86 || i == 95)
+            {
+                i = 102;
+                Guide.instance.i = 102;
+                continue;
+            }
+            else if (i == 103)
+            {
+                SelectMemory();
+                playgroundBtn.GetComponent<Button>().onClick.AddListener(PlaygroundBtn);
+                momcookBtn.GetComponent<Button>().onClick.AddListener(MomCookBtn);
+                dadhorsesBtn.GetComponent<Button>().onClick.AddListener(DadHorsesBtn);
+                handBtn.GetComponent<Button>().onClick.AddListener(HandBtn);
+                chairBtn.GetComponent<Button>().onClick.AddListener(ChairBtn);
+                yield return new WaitUntil(() => isSelected);
+                isSelected = false;
+                if (playground)
+                {
+                    i++;
+                    Guide.instance.i++;
+                    continue;
+                }
+                else if (momcook)
+                {
+                    i = 108;
+                    Guide.instance.i = 108;
+                    continue;
+                }
+                else if (dadhorses)
+                {
+                    i = 111;
+                    Guide.instance.i = 111;
+                    continue;
+                }
+                else if (hand)
+                {
+                    i = 113;
+                    Guide.instance.i = 113;
+                    continue;
+                }
+                else if (chair)
+                {
+                    i = 116;
+                    Guide.instance.i = 116;
+                    continue;
+                }
+            }
+            else if (i == 107 || i == 110 || i == 112 || i == 115)
+            {
+                i = 119;
+                Guide.instance.i = 119;
+                continue;
+            }
             else if (i == 130)
             {
                 SelectDialogue();
@@ -204,13 +434,13 @@ public class Dialogue : MonoBehaviour
                 isSelected = false;
                 if (no)
                 {
-                    i = 150;
-                    Guide.instance.i = 150;
+                    i = 151;
+                    Guide.instance.i = 151;
                     no = false;
                     continue;
                 }
             }
-            else if (i == 150)
+            else if (i == 151)
             {
                 if (Guide.instance.isGirl)
                 {
