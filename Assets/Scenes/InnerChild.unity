@@ -10716,12 +10716,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a9e4663357c12934d9778b84e9287196,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.756
+      value: 43.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a9e4663357c12934d9778b84e9287196,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 24.931429
+      value: -7.94
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a9e4663357c12934d9778b84e9287196,
         type: 3}
@@ -25213,7 +25213,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.01, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.011207581, y: 0.28712273, z: 28.52991}
+  m_ConnectedAnchor: {x: -0.011207581, y: 0.28712273, z: 21.059908}
   serializedVersion: 2
   m_UseSpring: 0
   m_Spring:
