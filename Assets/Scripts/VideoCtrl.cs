@@ -10,10 +10,18 @@ public class VideoCtrl : MonoBehaviour
     public GameObject RImage;
     public Image blackout2;
     public VideoPlayer video;
-    public VideoClip child1;
-    public VideoClip child2;
-    public VideoClip adult1;
-    public VideoClip adult2;
+    public VideoClip girl_kor_1;
+    public VideoClip girl_kor_2;
+    public VideoClip girl_eng_1;
+    public VideoClip girl_eng_2;
+    public VideoClip adult_kor_1;
+    public VideoClip adult_kor_2;
+    public VideoClip adult_eng_1;
+    public VideoClip adult_eng_2;
+    public VideoClip boy_kor_1;
+    public VideoClip boy_kor_2;
+    public VideoClip boy_eng_1;
+    public VideoClip boy_eng_2;
     public VideoClip ending;
 
     private void Awake()
@@ -36,22 +44,66 @@ public class VideoCtrl : MonoBehaviour
 
     public void Write1()
     {
-        video.clip = adult1;
+        if (Guide.instance.isEnglish)
+        {
+            video.clip = adult_eng_1;
+        }
+        else if (!Guide.instance.isEnglish)
+        {
+            video.clip = adult_kor_1;
+        }
         video.Play();
     }
     public void Answer1()
     {
-        video.clip = child1;
+        if (Guide.instance.isGirl && Guide.instance.isEnglish)
+        {
+            video.clip = girl_eng_1;
+        }
+        else if(Guide.instance.isGirl && !Guide.instance.isEnglish)
+        {
+            video.clip = girl_kor_1;
+        }
+        else if (!Guide.instance.isGirl && Guide.instance.isEnglish)
+        {
+            video.clip = boy_eng_1;
+        }
+        else if (!Guide.instance.isGirl && !Guide.instance.isEnglish)
+        {
+            video.clip = boy_kor_1;
+        }
         video.Play();
     }
     public void Write2()
     {
-        video.clip = adult2;
+        if (Guide.instance.isEnglish)
+        {
+            video.clip = adult_eng_2;
+        }
+        else if (!Guide.instance.isEnglish)
+        {
+            video.clip = adult_kor_2;
+        }
         video.Play();
     }
     public void Answer2()
     {
-        video.clip = child2;
+        if (Guide.instance.isGirl && Guide.instance.isEnglish)
+        {
+            video.clip = girl_eng_2;
+        }
+        else if (Guide.instance.isGirl && !Guide.instance.isEnglish)
+        {
+            video.clip = girl_kor_2;
+        }
+        else if (!Guide.instance.isGirl && Guide.instance.isEnglish)
+        {
+            video.clip = boy_eng_2;
+        }
+        else if (!Guide.instance.isGirl && !Guide.instance.isEnglish)
+        {
+            video.clip = boy_kor_2;
+        }
         video.Play();
     }
 

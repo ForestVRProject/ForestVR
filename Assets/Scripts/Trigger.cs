@@ -12,6 +12,7 @@ public class Trigger : MonoBehaviour
         if (count == 0)
         {
             isTrigger = true;
+            Butterfly.instance.following = false;
             count++;
         }
     }

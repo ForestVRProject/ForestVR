@@ -6,6 +6,8 @@ public class Innerchild : MonoBehaviour
 {
     public Light ilight;
     public bool boy;
+    public bool changed = false;
+    private bool change = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,21 @@ public class Innerchild : MonoBehaviour
 
     public void ChangeColor()
     {
-        ilight.color = new Color32(255, 0, 170, 255);
+        this.change = true;
     }
 
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (change)
+        {
+            ilight.color = new Color32(255, 0, 170, 255);
+            changed = true;
+        }
+    }
+
+    public void FadeOut()
+    {
+        Destroy(gameObject);
+    }
 }

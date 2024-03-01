@@ -106,6 +106,14 @@ public class Dialogue : MonoBehaviour
                 handBtn.SetActive(false);
                 chairBtn.SetActive(false);
                 //textShow = GameObject.Find("TextData").GetComponent<TextMeshProUGUI>();
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act18");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act18");
+                }
                 i++;
                 yield return new WaitForSeconds(1);
                 StartCoroutine(SwitchText2());
@@ -260,6 +268,164 @@ public class Dialogue : MonoBehaviour
     {
         while (true)
         {
+            if (i == 72)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act28");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act28");
+                }
+            }
+            if (i == 78)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act25");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act25");
+                }
+            }
+            if (i == 85)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act21");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act21");
+                }
+            }
+            if (i == 91)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act21");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act21");
+                }
+            }
+            if (i == 99)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act25");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act25");
+                }
+            }
+            if (i == 124)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act27");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act27");
+                }
+            }
+            if (i == 126)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act28");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act28");
+                }
+            }
+            if (i == 131)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act24");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act24");
+                }
+            }
+            if (i == 132)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act2930");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act2930");
+                }
+            }
+            if (i == 134)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act32");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act32");
+                }
+            }
+            if (i == 142)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act31");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act31");
+                }
+            }
+            if (i == 146)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act32");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act32");
+                }
+            }
+            if (i == 148)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act32_2");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act32_2");
+                }
+            }
+            if (i == 157)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act36");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act36");
+                }
+            }
+            if (i == 159)
+            {
+                GameObject.Find("InnerchildBoy").GetComponent<Innerchild>().FadeOut();
+            }
             Guide.instance.GuideSwitch();
             yield return new WaitWhile(() => Guide.instance.guideAud.isPlaying);
             if (i == 33)
@@ -307,6 +473,39 @@ public class Dialogue : MonoBehaviour
             {
                 yield return new WaitUntil(() => GameObject.Find("Trigger2").GetComponent<Trigger>().isTrigger);
                 GameObject.Find("Trigger2").GetComponent<Trigger>().isTrigger = false;
+            }
+            else if (i == 60)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act19");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act19");
+                }
+            }
+            else if (i == 61)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act18");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act18");
+                }
+            }
+            else if (i == 62)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act21");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act21");
+                }
             }
             else if (i == 67)
             {
@@ -361,6 +560,14 @@ public class Dialogue : MonoBehaviour
             {
                 i = 102;
                 Guide.instance.i = 102;
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act22");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act22");
+                }
                 continue;
             }
             else if (i == 103)
@@ -377,30 +584,70 @@ public class Dialogue : MonoBehaviour
                 {
                     i++;
                     Guide.instance.i++;
+                    if (Guide.instance.isGirl)
+                    {
+                        GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act21");
+                    }
+                    else
+                    {
+                        GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act21");
+                    }
                     continue;
                 }
                 else if (momcook)
                 {
                     i = 108;
                     Guide.instance.i = 108;
+                    if (Guide.instance.isGirl)
+                    {
+                        GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act21");
+                    }
+                    else
+                    {
+                        GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act21");
+                    }
                     continue;
                 }
                 else if (dadhorses)
                 {
                     i = 111;
                     Guide.instance.i = 111;
+                    if (Guide.instance.isGirl)
+                    {
+                        GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act21");
+                    }
+                    else
+                    {
+                        GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act21");
+                    }
                     continue;
                 }
                 else if (hand)
                 {
                     i = 113;
                     Guide.instance.i = 113;
+                    if (Guide.instance.isGirl)
+                    {
+                        GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act25");
+                    }
+                    else
+                    {
+                        GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act25");
+                    }
                     continue;
                 }
                 else if (chair)
                 {
                     i = 116;
                     Guide.instance.i = 116;
+                    if (Guide.instance.isGirl)
+                    {
+                        GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act26");
+                    }
+                    else
+                    {
+                        GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act26");
+                    }
                     continue;
                 }
             }
@@ -408,6 +655,14 @@ public class Dialogue : MonoBehaviour
             {
                 i = 119;
                 Guide.instance.i = 119;
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act23");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act23");
+                }
                 continue;
             }
             else if (i == 130)
@@ -445,10 +700,23 @@ public class Dialogue : MonoBehaviour
                 if (Guide.instance.isGirl)
                 {
                     GameObject.Find("InnerchildGirl").GetComponent<Innerchild>().ChangeColor();
+                    yield return new WaitUntil(() => GameObject.Find("InnerchildGirl").GetComponent<Innerchild>().changed);
                 }
                 else
                 {
                     GameObject.Find("InnerchildBoy").GetComponent<Innerchild>().ChangeColor();
+                    yield return new WaitUntil(() => GameObject.Find("InnerchildBoy").GetComponent<Innerchild>().changed);
+                }
+            }
+            else if (i == 152)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act35");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act35");
                 }
             }
             else if (i == 155)
