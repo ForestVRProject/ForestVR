@@ -7,6 +7,8 @@ public class Innerchild : MonoBehaviour
     public Light ilight;
     public bool boy;
     public bool changed = false;
+    public bool hug = false;
+    public bool ishug = false;
     private bool change = false;
     // Start is called before the first frame update
     void Start()
@@ -35,10 +37,21 @@ public class Innerchild : MonoBehaviour
             ilight.color = new Color32(255, 0, 170, 255);
             changed = true;
         }
+        if (ishug)
+        {
+            hug = true;
+        }
     }
 
     public void FadeOut()
     {
-        Destroy(gameObject);
+        ishug = true;
+        StartCoroutine(Hug());
+    }
+
+    IEnumerator Hug()
+    {
+        yield return new WaitUntil(() => hug);
+        Destroy(gameObject,3);
     }
 }

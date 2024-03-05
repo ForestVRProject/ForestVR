@@ -268,7 +268,7 @@ public class Dialogue : MonoBehaviour
     {
         while (true)
         {
-            if (i == 72)
+            if (i == 73)
             {
                 if (Guide.instance.isGirl)
                 {
@@ -279,18 +279,18 @@ public class Dialogue : MonoBehaviour
                     GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act28");
                 }
             }
-            if (i == 78)
+            if (i == 77)
             {
                 if (Guide.instance.isGirl)
                 {
-                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act25");
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act23");
                 }
                 else
                 {
-                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act25");
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act23");
                 }
             }
-            if (i == 85)
+            if (i == 84)
             {
                 if (Guide.instance.isGirl)
                 {
@@ -316,11 +316,11 @@ public class Dialogue : MonoBehaviour
             {
                 if (Guide.instance.isGirl)
                 {
-                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act25");
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act23");
                 }
                 else
                 {
-                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act25");
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act23");
                 }
             }
             if (i == 124)
@@ -356,7 +356,7 @@ public class Dialogue : MonoBehaviour
                     GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act24");
                 }
             }
-            if (i == 132)
+            if (i == 133)
             {
                 if (Guide.instance.isGirl)
                 {
@@ -389,7 +389,7 @@ public class Dialogue : MonoBehaviour
                     GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act31");
                 }
             }
-            if (i == 146)
+            if (i == 145)
             {
                 if (Guide.instance.isGirl)
                 {
@@ -424,7 +424,18 @@ public class Dialogue : MonoBehaviour
             }
             if (i == 159)
             {
-                GameObject.Find("InnerchildBoy").GetComponent<Innerchild>().FadeOut();
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Innerchild>().FadeOut();
+                    yield return new WaitUntil(() => GameObject.Find("InnerchildGirl").GetComponent<Innerchild>().hug);
+                    yield return new WaitForSeconds(3);
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Innerchild>().FadeOut();
+                    yield return new WaitUntil(() => GameObject.Find("InnerchildBoy").GetComponent<Innerchild>().hug);
+                    yield return new WaitForSeconds(3);
+                }
             }
             Guide.instance.GuideSwitch();
             yield return new WaitWhile(() => Guide.instance.guideAud.isPlaying);
@@ -483,17 +494,6 @@ public class Dialogue : MonoBehaviour
                 else
                 {
                     GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act19");
-                }
-            }
-            else if (i == 61)
-            {
-                if (Guide.instance.isGirl)
-                {
-                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act18");
-                }
-                else
-                {
-                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act18");
                 }
             }
             else if (i == 62)
