@@ -50,6 +50,11 @@ public class Dialogue : MonoBehaviour
         StartCoroutine(SwitchText());
     }
 
+    public void LateUpdate()
+    {
+        IsCameraFacingBack();
+    }
+
     IEnumerator SwitchText()
     {
         while (true)
@@ -411,17 +416,6 @@ public class Dialogue : MonoBehaviour
                     GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act32_2");
                 }
             }
-            if (i == 157)
-            {
-                if (Guide.instance.isGirl)
-                {
-                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act36");
-                }
-                else
-                {
-                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act36");
-                }
-            }
             if (i == 159)
             {
                 if (Guide.instance.isGirl)
@@ -439,7 +433,11 @@ public class Dialogue : MonoBehaviour
             }
             Guide.instance.GuideSwitch();
             yield return new WaitWhile(() => Guide.instance.guideAud.isPlaying);
-            if (i == 33)
+            if (i == 25)
+            {
+                yield return new WaitUntil(() => IsCameraFacingBack());
+            }
+            else if (i == 33)
             {
                 yield return new WaitUntil(() => Elevator.instance._goingDown);
             }
@@ -697,6 +695,18 @@ public class Dialogue : MonoBehaviour
             }
             else if (i == 151)
             {
+                SelectDialogue();
+                btn1.GetComponent<Button>().onClick.AddListener(SelectBtn1);
+                btn2.GetComponent<Button>().onClick.AddListener(SelectBtn2);
+                yield return new WaitUntil(() => isSelected);
+                isSelected = false;
+                if (no)
+                {
+                    i = 159;
+                    Guide.instance.i = 159;
+                    no = false;
+                    continue;
+                }
                 if (Guide.instance.isGirl)
                 {
                     GameObject.Find("InnerchildGirl").GetComponent<Innerchild>().ChangeColor();
@@ -732,6 +742,17 @@ public class Dialogue : MonoBehaviour
                     Guide.instance.i = 159;
                     no = false;
                     continue;
+                }
+            }
+            else if (i == 158)
+            {
+                if (Guide.instance.isGirl)
+                {
+                    GameObject.Find("InnerchildGirl").GetComponent<Animator>().SetTrigger("Act36");
+                }
+                else
+                {
+                    GameObject.Find("InnerchildBoy").GetComponent<Animator>().SetTrigger("Act36");
                 }
             }
             else if (i == 160)
@@ -807,5 +828,32 @@ public class Dialogue : MonoBehaviour
             i++;
             yield return new WaitForSeconds(1);
         }
+    }
+
+    public bool IsCameraFacingBack()
+    {
+        // Main Camera를 찾음
+        GameObject mainCamera = GameObject.FindWithTag("MainCamera");
+
+        if (mainCamera != null)
+        {
+            // Main Camera의 forward 방향
+            Vector3 cameraForward = mainCamera.transform.forward;
+            
+            // World forward 방향
+            Vector3 worldUp = Vector3.forward;
+            
+            // 두 벡터의 내적 계산
+            float dotProduct = Vector3.Dot(cameraForward, worldUp);
+
+            // 내적이 0보다 작으면 카메라가 뒤를 보고 있는 것으로 간주
+            if (dotProduct < 0)
+            {
+                return true;
+            }
+        }
+
+        // 그 외의 경우에는 false 반환
+        return false;
     }
 }

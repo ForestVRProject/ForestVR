@@ -56,6 +56,7 @@ public class Elevator : MonoBehaviour
                 _goingDown = false;
                 _audioSource.Stop();
                 OpenDoor();
+                Butterfly.instance.ChangeTarget();
             }
         }else if (_goingUp)
         {

@@ -3698,6 +3698,8 @@ MonoBehaviour:
   ilight: {fileID: 1217900538}
   boy: 0
   changed: 0
+  hug: 0
+  ishug: 0
 --- !u!136 &239555678
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14505,7 +14507,7 @@ Transform:
   m_GameObject: {fileID: 1050614810}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.33, y: 0.711, z: 8.809999}
+  m_LocalPosition: {x: -0.33, y: 1.13, z: 8.809999}
   m_LocalScale: {x: 5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18773,6 +18775,8 @@ MonoBehaviour:
   ilight: {fileID: 1512845472}
   boy: 1
   changed: 0
+  hug: 0
+  ishug: 0
 --- !u!136 &1352906231
 CapsuleCollider:
   m_ObjectHideFlags: 0
