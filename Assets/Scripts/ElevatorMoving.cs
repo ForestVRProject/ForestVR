@@ -75,7 +75,7 @@ public class Elevator : MonoBehaviour
                 _audioSource.Stop();
                 OpenDoor();
             }
-        }        
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -84,7 +84,7 @@ public class Elevator : MonoBehaviour
         {
             Debug.Log("enter elevator");
             CloseDoor();
-            //_player.transform.parent = this.transform;
+            _player.transform.parent = this.transform;
             if(!_goingDown && !_goingUp)
             {
                 Invoke("CloseAnimationEnd", 2);
@@ -97,7 +97,7 @@ public class Elevator : MonoBehaviour
         if(other.tag == "Player")
         {
             Debug.Log("exit elevator");
-            //_player.transform.parent = null;
+            _player.transform.parent = null;
             CloseDoor();
         }
     }

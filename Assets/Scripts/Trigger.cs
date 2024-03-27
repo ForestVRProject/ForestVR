@@ -12,8 +12,11 @@ public class Trigger : MonoBehaviour
         if (count == 0)
         {
             isTrigger = true;
-            Butterfly.instance.following = false;
             count++;
+            if (this.gameObject.name == "BTrigger")
+            {
+                Butterfly.instance.following = false;
+            }
         }
     }
 }

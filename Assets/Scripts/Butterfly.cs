@@ -33,19 +33,12 @@ public class Butterfly : MonoBehaviour
     {
         if(Vector3.Distance(target.position, this.transform.position) > 1 && following)
         {
-            if(target == GameObject.Find("Trigger").transform)
-            {
-                this.transform.position = Vector3.MoveTowards(this.transform.position, target.position, 0.6f * Time.deltaTime);
-            }
-            else{
-                this.transform.position = Vector3.MoveTowards(this.transform.position, target.position, 1 * Time.deltaTime);
-            }
-            
+            this.transform.position = Vector3.MoveTowards(this.transform.position, target.position, 1 * Time.deltaTime);
         }
     }
 
     public void ChangeTarget()
     {
-        target = GameObject.Find("Trigger").transform;
+        target = GameObject.Find("BTrigger").transform;
     }
 }
