@@ -435,6 +435,7 @@ public class Dialogue : MonoBehaviour
             yield return new WaitWhile(() => Guide.instance.guideAud.isPlaying);
             if (i == 25)
             {
+                Debug.Log("Turn to Back");
                 yield return new WaitUntil(() => IsCameraFacingBack());
             }
             else if (i == 33)
@@ -480,8 +481,8 @@ public class Dialogue : MonoBehaviour
             }
             else if (i == 53)
             {
-                yield return new WaitUntil(() => GameObject.Find("Trigger2").GetComponent<Trigger>().isTrigger);
-                GameObject.Find("Trigger2").GetComponent<Trigger>().isTrigger = false;
+                yield return new WaitUntil(() => GameObject.Find("BTrigger").GetComponent<Trigger>().isTrigger);
+                GameObject.Find("BTrigger").GetComponent<Trigger>().isTrigger = false;
             }
             else if (i == 60)
             {
